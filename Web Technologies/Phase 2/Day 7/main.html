@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <title>
+            Shop
+        </title><hr>
+        <h1 style="font-size: 50px; color: rgb(44, 46, 160); text-align: center; font-family: fantasy;">
+            Welcome to our grocery shop
+        </h1><hr>
+        <h4 style="text-align: center;">Click on category to display available stocks</h4>
+    </head>
+
+    <style>
+        .border{
+            border: 5px solid rgb(44, 46, 160);
+            border-radius: 100px;
+        }
+    </style>
+
+
+<script>
+
+    var kart=[" "];
+    var fk=0;
+
+    //speech synthesis funtion
+    function textToAudio(msg) {
+                
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                //textToAudio attributes
+                speech.text = msg;
+                speech.volume = 120;
+                speech.rate = 1;
+                speech.pitch = 1;
+                
+                window.speechSynthesis.speak(speech);
+            }
+
+    function checkouu(){
+        textToAudio("Selected grocery will be shipped to your address");
+        
+        window.location.reload();
+        
+    }
+
+    function kkart(ele){
+        window.kart[fk]=ele;
+        window.fk=window.fk+1;
+        document.getElementById('kkk').innerHTML=kart;
+    }
+
+
+
+
+                                //creating a global variable to let the final function know what category the user have selected
+    var value = 0;
+                                //assigning fruit elements and to diplay when fruit is clicked
+    function fruits(){
+        let fruits=['Apple','Orange','Grapes','Banana','Strawberry'];
+        document.getElementById("1").innerHTML=fruits[0];
+        document.getElementById("2").innerHTML=fruits[1];
+        document.getElementById("3").innerHTML=fruits[2];
+        document.getElementById("4").innerHTML=fruits[3];
+        document.getElementById("5").innerHTML=fruits[4];
+        window.value = 1;
+
+    }
+                                //assigning veg elements and to diplay when vegetable is clicked
+    function veggy(){
+        let veggy=['Potato','Tomato','Capsicum','Brinjal','Muttacose'];
+        document.getElementById("1").innerHTML=veggy[0];
+        document.getElementById("2").innerHTML=veggy[1];
+        document.getElementById("3").innerHTML=veggy[2];
+        document.getElementById("4").innerHTML=veggy[3];
+        document.getElementById("5").innerHTML=veggy[4];
+        window.value = 2;
+
+    }
+                            //assigning snacks elements and to diplay when snacks is clicked
+    function snacks(){
+        let snacks={snack1:'Burger',snack2:'Pups',snack3:'Chicken Roll',snack4:'Showerma',snack5:'Pizza'};
+        document.getElementById("1").innerHTML=snacks.snack1;
+        document.getElementById("2").innerHTML=snacks.snack2;
+        document.getElementById("3").innerHTML=snacks.snack3;
+        document.getElementById("4").innerHTML=snacks.snack4;
+        document.getElementById("5").innerHTML=snacks.snack5;
+        window.value = 3;
+
+    }
+                            //function to process the shipment when the input is submitted
+    function submit(){
+
+                            //assigning same elements to this local variable for output reference
+        let fruits=['Apple','Orange','Grapes','Banana','Strawberry'];
+        let veggy=['Potato','Tomato','Capsicum','Brinjal','Muttacose'];
+        let snacks=['Burger','Pups','Chicken Roll','Showerma','Pizza'];
+                            //grasping the input
+        let inn = Number(document.getElementById('input').value);
+        if(inn==0){
+            window.alert("Enter any number before submiting")
+            textToAudio("Enter any number before submiting")
+        } else if(inn>5){
+            window.alert("Enter a valid number")
+            textToAudio("I dont think you get it properly, Enter a valid number")
+        } else{
+            if(value==0){
+                window.alert("select a cetogory first!")
+            } else if(value==1){
+                ouu=fruits[inn-1]+" added to your cart";
+                document.getElementById("fout").innerHTML = ouu;
+                kkart(fruits[inn-1]);
+                textToAudio(ouu);
+            } else if(value==2){
+                ouu=veggy[inn-1]+" added to your cart";
+                document.getElementById("fout").innerHTML = ouu;
+                textToAudio(ouu);
+                kkart(veggy[inn-1]);
+            } else if(value==3){
+                ouu=snacks[inn-1]+" added to your cart";
+                document.getElementById("fout").innerHTML = ouu;
+                textToAudio(ouu);
+                kkart(snacks[inn-1]);
+            }
+            
+            
+
+        }
+        
+    }
+
+</script>
+
+<body style="background-image: url('https://imgr.search.brave.com/cFdb7etXKlZchawXfC-jVcSy7EwcOq34DgMNDlPrlhA/fit/1200/768/ce/1/aHR0cHM6Ly93d3cu/aGR3YWxscGFwZXJz/LmluL2Rvd25sb2Fk/L3doaXRlX3dhbGxw/YXBlcl81XzRrX2hk/X3doaXRlLTEzNjZ4/NzY4LmpwZw');"><br>
+    <!--Button elements for selecting category-->
+    <div style="text-align: center; font-size: 170%; font-family: cursive;">
+        <button id="fr" type="button" onclick="fruits()">FRUITS</button>
+        <button id="veg" type="button" onclick="veggy()">VEGETABLES</button>
+        <button id="snack" type="button" onclick="snacks()">SNACKS</button>
+    <!--List element for displaying stocks in selected category-->
+            <ol>
+                <li class="border" id="1">Item 1</li><br>
+                <li class="border" id="2">Item 2</li><br>
+                <li class="border" id="3">Item 3</li><br>
+                <li class="border" id="4">Item 4</li><br>
+                <li class="border" id="5">Item 5</li><br>
+            </ol><br><br>
+
+        <!--Iout element-->
+            <label>Enter number of your choice: </label><br>
+            <input type="number" id="input">
+            <button type="button" onclick="submit()">Add</button>
+            <br><br>
+            <h2 id="fout"></h2>
+            <br><br><div class="border">
+            <h3>Cart</h3>
+            <p id="kkk">Add something to your kart</p><br></div>
+            <form><br><br>
+                <button onclick="checkouu();">Checkout</button>
+            </form><br>
+        <p style="font-size: 50%;">Your order will be shipped when you click checkout</p>
+    
+        </div>
+</body>
+
+</html>

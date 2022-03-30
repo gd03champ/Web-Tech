@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            Bulb
+        </title>
+    </head>
+    <body>
+
+        <script>
+            function on(){
+                document.getElementById('bub').src='assets/on.png';
+            }
+            function off(){
+                document.getElementById('bub').src='assets/off.png';
+            }
+    
+        </script>
+
+
+
+        <img id="bub" src="assets/off.png">
+
+        <button onclick="off()">Turn Off</button>
+        <button onclick="on()">Turn On</button>
+       
+    </body>
+</html>

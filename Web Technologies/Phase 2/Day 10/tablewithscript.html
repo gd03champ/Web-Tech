@@ -1,0 +1,52 @@
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body><center>
+<table id="myTable">
+  <tr>
+    <td>Row1 col1</td>
+    <td>Row1 col2</td>
+  </tr>
+  <tr>
+    <td>Row2 col1</td>
+    <td>Row2 col2</td>
+  </tr>
+  <tr>
+    <td>Row3 col1</td>
+    <td>Row3 col2</td>
+  </tr>
+</table>
+<br>
+<p id="demo"></p>
+<p id="demo1"></p>
+<button type="button" onclick="myFunction()">Insert rows</button>
+<button type="button" onclick="myFunction1()">Get Total</button>
+<button type="button" onclick="window.location.reload(true)">Reset</button></center>
+<script>
+k=2
+function myFunction() {
+k=k+1
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(k);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "Row"+k+" col1";
+  cell2.innerHTML = "Row"+k+" col2";
+}
+function myFunction1() {
+  var x = document.getElementById("myTable").rows.length;
+  document.getElementById("demo").innerHTML = "No of Rows: " + x;
+
+}
+function myFunction2() {
+
+}
+</script>
+
+</body>
+</html>

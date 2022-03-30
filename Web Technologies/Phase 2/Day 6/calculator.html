@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        <h1  style="text-align: center; font-family: monospace; font-size: 300%; border: 7px solid rgb(55, 110, 199);
+        border-radius: 100px;">Calculator</h1><br><br>
+    </head>
+    <body>
+
+        <script>
+            function sum(){
+
+                let Numb1=Number(document.getElementById('num1').value);
+                let Numb2=Number(document.getElementById('num2').value);
+                let z = Numb1 + Numb2;
+                document.getElementById('result-sum').innerHTML="The sum is " + z;
+            }
+
+            function sub(){
+
+                let Numb1=Number(document.getElementById('num1').value);
+                let Numb2=Number(document.getElementById('num2').value);
+                let z = Numb1 - Numb2;
+                document.getElementById('result-sum').innerHTML="The sub is " + z;
+            }
+
+            function prod(){
+
+                let Numb1=Number(document.getElementById('num1').value);
+                let Numb2=Number(document.getElementById('num2').value);
+                let z = Numb1 * Numb2;
+                document.getElementById('result-sum').innerHTML="The prod is " + z;
+            }
+
+            function div(){
+
+                let Numb1=Number(document.getElementById('num1').value);
+                let Numb2=Number(document.getElementById('num2').value);
+                if(Numb1==0){
+                    if(Numb2==0){
+                        window.alert("This is not good for both of us")
+                    }
+                }
+                let z = Numb1 / Numb2;
+                document.getElementById('result-sum').innerHTML="The Quat is " + z;
+            }
+
+            function rem(){
+
+                let Numb1=Number(document.getElementById('num1').value);
+                let Numb2=Number(document.getElementById('num2').value);
+                if(Numb1==0){
+                    if(Numb2==0){
+                        window.alert("This is not good for both of us")
+                    }
+                }
+                let z = Numb1 % Numb2;
+                document.getElementById('result-sum').innerHTML="The Rem is " +z;
+}
+            
+document.write("Have a nice math")
+        </script>
+
+
+
+        <form style="text-align: center; font-size: 150%;">
+            <label>Enter Num1: </label><input value=0 type="number" id="num1">  
+            <label>Enter Num2: </label><input value=0 type="number" id="num2"> <br><br>
+            <p style="border: 5px solid rgb(55, 110, 199);
+            border-radius: 100px;" id="result-sum"></p>  <br><br>
+
+            <button type="button" id="butt" onclick="sum()">+</button>
+            <button type="button" id="butt" onclick="sub()">-</button>
+            <button type="button" id="butt" onclick="prod()">x</button>
+            <button type="button" id="butt" onclick="div()">/</button>
+            <button type="button" id="butt" onclick="rem()">%</button><br><br>
+            <input type="reset" value="Reset">
+            
+        </form>
+    </body>
+</html>

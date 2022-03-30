@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        <h1 style="text-align: center;">Calculator Pro</h1>
+
+        <style>
+            
+        </style>
+
+        <script>
+            var val=1;
+            var cal=Number(1);
+
+            function view(ele){
+                window.val=window.val+ele;
+            
+                document.getElementById('view').value = window.val;
+            }
+
+
+        </script>
+
+    </head>
+
+    <body><center>
+        <input value="1" id="view" style="font-size: 300%;"><br><br><br>
+    
+    
+    <table>
+        <tr>
+            <td>
+                <button style="font-size: 500%;" onclick="view('1')" type="button">1</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('2')" type="button">2</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('3')" type="button">3</button>
+            </td>
+            <td><p> ----- </p></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('+')" type="button">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button style="font-size: 500%;" onclick="view('4')" type="button">4</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('5')" type="button">5</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('6')" type="button">6</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('-')" type="button">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button style="font-size: 500%;" onclick="view('7')" type="button">7</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('8')" type="button">8</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('9')" type="button">9</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('x')" type="button">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button style="font-size: 500%;" onclick="view('0')" type="button">0</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 500%;" onclick="" type="button">=</button>
+            </td>
+            <td></td>
+            <td>
+                <button style="font-size: 450%;" onclick="" type="button">C</button>
+            </td>
+            <td><p> ----- </p></td>
+            <td>
+                <button style="font-size: 500%;" onclick="view('/')" type="button">/</button>
+            </td>
+        </tr>
+    </table>
+    
+    
+    
+    
+    
+    </center>
+
+
+    </body>
+
+</html>

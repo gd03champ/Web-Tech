@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        <h1  style="text-align: center; font-family: monospace; font-size: 300%; border: 7px solid rgb(55, 110, 199);
+        border-radius: 100px;">Calculator</h1><br><br>
+    </head>
+    <body>
+
+        <script>
+
+        let res = 0;
+
+            function sum(){
+
+                let Numb=Number(document.getElementById('inp').value);
+                
+                let res=res+Numb;
+                document.getElementById('result-sum').innerHTML="The final value: " + res ;
+            }
+
+            function sub(){
+
+                let Numb=Number(document.getElementById('inp').value);
+
+                let res=res-Numb;
+                document.getElementById('result-sum').innerHTML="The final value: " + res ;
+            }
+
+            function prod(){
+
+                let Numb=Number(document.getElementById('inp').value);
+
+                let res=res*Numb;
+                document.getElementById('result-sum').innerHTML="The final value: " + res ;
+            }
+
+            function div(){
+
+                let Numb=Number(document.getElementById('inp').value);
+
+                let res=res/Numb;
+                document.getElementById('result-sum').innerHTML="The final value: " + res ;
+            }
+
+        </script>
+
+
+
+        <form style="text-align: center; font-size: 150%;">
+            <label>Enter Num: </label><input value=0 type="number" id="inp"> <br><br>
+
+
+            <p style="border: 5px solid rgb(55, 110, 199);
+            border-radius: 100px;" id="result-sum">0</p>  <br><br>
+
+            <button type="button" id="butt" onclick="sum()">+</button>
+            <button type="button" id="butt" onclick="sub()">-</button>
+            <button type="button" id="butt" onclick="prod()">x</button>
+            <button type="button" id="butt" onclick="div()">/</button>
+            <br><br>
+            <input type="reset" value="Reset">
+            
+        </form>
+    </body>
+</html>
