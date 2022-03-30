@@ -1,0 +1,160 @@
+<html>
+
+<head>
+    <title>
+        DOM
+    </title>
+    <style>
+        #train {
+            position: relative;
+            cursor: pointer;
+        }
+
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: rgb(255, 255, 255);
+        }
+
+        #star5 {
+            margin: 50px 0;
+            position: relative;
+            display: block;
+            width: 0px;
+            height: 0px;
+            border-right: 50px solid transparent;
+            border-bottom: 35px solid #013368;
+            border-left: 50px solid transparent;
+            -moz-transform: rotate(35deg);
+            -webkit-transform: rotate(35deg);
+            -ms-transform: rotate(35deg);
+            -o-transform: rotate(35deg);
+        }
+
+        #star5:before {
+            border-bottom: 40px solid #013368;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            position: absolute;
+            height: 0;
+            width: 0;
+            top: -27px;
+            left: -32px;
+            display: block;
+            content: "";
+            -webkit-transform: rotate(-35deg);
+            -moz-transform: rotate(-35deg);
+            -ms-transform: rotate(-35deg);
+            -o-transform: rotate(-35deg);
+        }
+
+        #star5:after {
+            position: absolute;
+            display: block;
+            top: 3px;
+            left: -53px;
+            width: 0px;
+            height: 0px;
+            border-right: 50px solid transparent;
+            border-bottom: 35px solid #013368;
+            border-left: 50px solid transparent;
+            -webkit-transform: rotate(-70deg);
+            -moz-transform: rotate(-70deg);
+            -ms-transform: rotate(-70deg);
+            -o-transform: rotate(-70deg);
+            content: "";
+        }
+    </style>
+    <script>
+        function clicker() {
+            window.alert("You just clicked");
+        }
+        function over() {
+            document.getElementById('butt').innerHTML = "Click Me";
+        }
+        function outt() {
+            document.getElementById('butt').innerHTML = "Come Here";
+            document.getElementById('butt2').innerHTML = "Come Here";
+        }
+        function over2() {
+            document.getElementById('butt2').innerHTML = "Hold Me";
+        }
+        function upp() {
+            document.getElementById('butt2').innerHTML = "😃";
+        }
+        function Datu() {
+            document.getElementById('dat').innerHTML = Date();
+        }
+        function upperCase() {
+            const x = document.getElementById('nam');
+            x.value = x.value.toUpperCase();
+        }
+        function gifon() {
+            document.getElementById('gif').src = "https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?fit=476%2C280&ssl=1";
+        }
+        function gifoff() {
+            document.getElementById('gif').src = "gif.jpg";
+        }
+
+        function ooo() {
+            let start = Date.now();
+
+            let timer = setInterval(function () {
+                let timePassed = Date.now() - start;
+
+                train.style.left = timePassed / 5 + 'px';
+
+                if (timePassed > 7000) clearInterval(timer);
+
+            }, 20);
+        }
+
+        function myMove() {
+            let id = null;
+            const elem = document.getElementById("star5");
+            let pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 3);
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body style="background-color:#013368;"><br><br><br><br><br><br>
+    <center style="font-size: 150%;">
+        <button style="font-size: 200%; border: 7px; border-radius: 10px;" type="button" id="butt" onmouseout="outt()"
+            onmouseover="over()" onclick="clicker()">Come Here</button><br><br>
+        <button style="font-size: 200%; border: 7px; border-radius: 10px;" type="button" id="butt2" onmouseout="outt()"
+            onmouseover="over2()" onmouseup="upp()" onmousedown="outt()">Come Here</button><br><br>
+        <button style="font-size: 200%; border: 7px; border-radius: 10px;" type="button" id="butt3"
+            onclick="Datu()">Date</button><br><br>
+        <p id="dat" style="color: cornsilk; font-size: 125%;">Welcome</p>
+        <input type="text" style="font-size: 130%;" value="Name" id="nam"><br><br><button id="butt4"
+            style="border: 7px; border-radius: 10px; font-size: 130%;" type="button"
+            onclick="upperCase()">submit</button>
+        <br><br><br><br><br>
+        <p style="color: antiquewhite;">HOLD BELOW IMAGE</p>
+        <img onmousedown="gifon()" onmouseup="gifoff()" id="gif" src="gif.jpg">
+    </center>
+    <br><br><br>
+    <p style="text-align: center; color: antiquewhite;">CLICK BELOW IMAGE</p>
+    <img id="train" onclick="ooo()" src="run.gif">
+
+
+    <div id="container">
+        <div onclick="myMove()" id="star5"></div>
+    </div>
+
+</body>
+
+</html>
