@@ -1,0 +1,171 @@
+#area {
+  width: 100px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+
+}
+.road{
+  height: 5px;
+  width:100%;
+}
+.bus_container{
+  height: 45px;
+  width:100%;
+}
+.bus{
+  position: relative;
+  left:0;
+  animation: move 4s ease-out infinite;
+}
+@keyframes move{
+  0%{
+    left: -1000px;
+  }
+  75%{
+    left:1200px;
+  }
+  100%{
+    left: 1500px;
+  }
+  
+}
+.body_back{
+  width:30px;
+  height:10px;
+  background:#ef5f5f;
+  left: 5px;
+  top: 2px;
+  position:absolute;
+  border-top-left-radius:10px;
+}
+.body_front{
+  width:30px;
+  height:10px;
+  background:#e22424;
+  left: 35px;
+  top: 2px;
+  position:absolute;
+  border-top-right-radius:10px;
+}
+.window1{
+  width:10px;
+  height:10px;
+  background:white;
+  left: 10px;
+  top: 10px;
+  position:absolute;
+}
+.window2{
+  width:10px;
+  height:10px;
+  background:white;
+  left: 30px;
+  top: 10px;
+  position:absolute;
+}
+.window3{
+  width:10px;
+  height:10px;
+  background:white;
+  left: 50px;
+  top: 10px;
+  position:absolute;
+}
+.body_main_back{
+  width:30px;
+  height:12px;
+  background:#ef5f5f;
+  left: 5px;
+  top: 12px;
+  position:absolute;
+}
+.body_main_front{
+  width:30px;
+  height:12px;
+  background:#e22424;
+  left: 35px;
+  top: 12px;
+  position:absolute;
+}
+.body_wmain_back{
+  width:30px;
+  height:20px;
+  background:#ef5f5f;
+  left: 5px;
+  top: 24px;
+  position:absolute;
+}
+.body_wmain_front{
+  width:45px;
+  height:20px;
+  background:#e22424;
+  left: 35px;
+  top: 24px;
+  position:absolute;
+  border-top-right-radius:10px;
+}
+.wheel{
+  width:15px;
+  height:15px;
+  background:black;
+  left: 55px;
+  top: 35px;
+  position:absolute;
+  border-radius:15px;
+}
+.wheel2{
+  width:15px;
+  height:15px;
+  background:black;
+  left: 15px;
+  top: 35px;
+  position:absolute;
+  border-radius:15px;
+}
+.bumper{
+  width:5px;
+  height:5px;
+  background:black;
+  left: 0px;
+  top: 35px;
+  position:absolute;
+}
+.smoke {
+  width:7px;
+  height:7px;
+  background:#b5b5b5;
+  left: -10px;
+  top: 30px;
+  position:absolute;
+  border-radius:10px;
+  opacity : 0;
+  animation: smoking 0.5s ease-out infinite;
+}
+.smoke2 {
+  width:10px;
+  height:10px;
+  background:#b5b5b5;
+  left: -23px;
+  top: 25px;
+  position:absolute;
+  border-radius:10px;
+  opacity : 0;
+  animation-delay: 1s;
+  animation: smoking 0.5s ease-out infinite;
+}
+
+@keyframes smoking{
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0.2;
+  }
+  75%{
+    opacity: 0.3;
+  }
+  100%{
+    opacity: 1;
+  }
+  
+}
