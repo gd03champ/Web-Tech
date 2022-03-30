@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+<body id="bodie" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><center>
+ 
+<hr><h1>STUDENTS LOCATION INFO</h1><hr><br><br>
+
+
+<form action=""> 
+<select style="font-size: 180%;" name="customers" onchange="showStud(this.value)">
+<option value="">Select</option>
+<option value="1">1st Year</option>
+<option value="2">2nd Year</option>
+<option value="3">3rd Year</option>
+<option value="4">4th Year</option>
+</select>
+</form>
+<br>  
+<div id="txtHint">SELECT AN OPTION TO SHOW INFO</div><br><br>
+
+<img id="immgg" width="25%" height="25%" src="https://png.pngtree.com/png-vector/20190311/ourmid/pngtree-hello-comic-bubble-speech-png-image_843729.jpg">
+</center>
+<script>
+function showStud(str) {
+  var xhttp;    
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    document.getElementById('bodie').style.backgroundColor="white";
+    document.getElementById('immgg').src="https://png.pngtree.com/png-vector/20190311/ourmid/pngtree-hello-comic-bubble-speech-png-image_843729.jpg";
+    document.getElementById('txtHint').innerHTML="SELECT AN OPTION TO SHOW INFO";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+
+  if (str == "1"){
+    document.getElementById('bodie').style.backgroundColor="#b3d1ff";
+    document.getElementById('immgg').src="https://www.simplysapphires.com/wp-content/uploads/2020/12/blueem266-6.jpg";
+  }else if (str == "2"){
+    document.getElementById('bodie').style.backgroundColor="#ffb3b3";
+    document.getElementById('immgg').src="https://astrovrigu.com/wp-content/uploads/2021/05/panna.png";
+  } else if (str == "3"){
+    document.getElementById('bodie').style.backgroundColor="#c6ffb3";
+    document.getElementById('immgg').src="https://yokolondon.com/wp-content/uploads/2020/06/southsea-1.jpg?_t=1594225791";
+  } else if (str == "4"){
+    document.getElementById('bodie').style.backgroundColor="#fff0b3";
+    document.getElementById('immgg').src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIATd_p1eJPv9aYlkgN742_7IpuXwvdbIAzg&usqp=CAU";
+  }
+  xhttp.open("GET", "year.php?q="+str, true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+<body><center>
+
+<h1 style="font-family: 'Courier New', Courier, monospace;">EMPLOYEE DBMS</h1>
+
+<form action=""> 
+<select name="customers" onchange="showCustomer(this.value)">
+<option value="">Select a customer:</option>
+<option value="0">Allwin</option>
+<option value="1">Taranes</option>
+<option value="2">Yeswanth</option>
+<option value="3">Rithwik</option>
+</select>
+</form>
+<br>
+<div id="txtHint">CUSTOMER DATA HERE</div>
+<br><br>
+
+  <button type="button" onclick="window.location.href='http://localhost/Day13/task/signup.html';" >Click Me</button>
+</center></body>
+
+<script>
+function showCustomer(str) {
+  var xhttp;    
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "getemp.php?q="+str, true);
+  xhttp.send();
+}
+</script>
+
+
+</html>

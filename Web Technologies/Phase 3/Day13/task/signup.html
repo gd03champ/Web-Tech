@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>
+        SignUp
+    </title>
+    <h1 style="text-align: center;">SignUp</h1>
+    <br<br>
+</head>
+
+<!--<script>
+
+    function signupuh() {
+
+        let a = document.getElementById('A1').value;
+        let b = document.getElementById('A2').value;
+        let c = document.getElementById('A3').value;
+        let d = document.getElementById('A4').value;
+        let e = document.getElementById('A5').value;
+        let f = document.getElementById('A6').value;
+        let g = document.getElementById('A7').value;
+
+        var xhttp;
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("POST", "signup.php", true);
+        xhttp.send("a=" + a + "&b=" + b + "&c=" + c + "&d=" + d + "&e=" + e + "&f=" + f + "&g=" + g);
+
+    }
+</script>-->
+
+<body>
+    <center>
+
+        <fieldset>
+            <form name="form" method="post" action="signup.php">
+
+                <p><label>CustomerID: </label>
+                    <input id="A1" name="A1" type="number">
+                </p><br><br>
+
+                <p><label>Name: </label>
+                    <input id="A2" name="A2" type="text"><br><br>
+
+                <p><label>ContactNum: </label>
+                    <input id="A3" name="A3" type="text">
+                </p><br><br>
+
+                <p><label>Address: </label>
+                    <input id="A4" name="A4" type="text">
+                </p><br><br>
+
+                <p><label>City: </label>
+                    <input id="A5" name="A5" type="text">
+                </p><br><br>
+
+                <p><label>Position: </label>
+                    <input id="A6" name="A6" type="text">
+                </p><br><br>
+
+                <p><label>Country: </label>
+                    <input id="A7" name="A7" type="text">
+                </p>
+
+                <p>&nbsp;</p>
+                <p>
+                    <input type="submit" name="Submit" id="Submit" value="Submit">
+                </p>
+
+
+            </form>
+        </fieldset>
+        <p id="txtHint"></p>
+
+    </center>
+</body>
+
+</html>
