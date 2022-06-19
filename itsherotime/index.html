@@ -1,0 +1,328 @@
+<!--
+    Author: Ganish Deepak N
+    Mail: ganishdeepak.cs21@bitsathy.ac.in
+-->
+
+<html>
+    <head>
+        <title>Ben 10 | It's Hero Time</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="https://1111390295.rsc.cdn77.org/frontend/images/device-favicon/favicon.ico?v=1"> 
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Mochiy+Pop+P+One&family=Oswald&display=swap');
+
+#background-video {
+width: 100vw;
+height: 100vh;
+object-fit: cover;
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+z-index: -1;
+filter: brightness(25%);
+}
+
+img.green:hover{
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(0,255,0, 0.6);
+  
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05); 
+  transform: scale(1.05); 
+}
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style>
+
+<script>
+    
+    //giving play to as theme starts when page loads due to autoplay attribute in audio tag
+    var play=false;
+    var once_played=false;
+    var id=0;
+    var human=true;
+    var epidis=false;
+
+    //this function transforms ben into aliens when omnitrix in triggered
+    async function transform(){
+
+        if(window.once_played==true){
+            console.log("Pass");
+        } else{
+            control()
+            window.once_played=true;
+        }
+        
+        //toggle to full screen when omnitrix clicked
+        requestFullScreen()
+
+        //scroll to top after full screen
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+
+        //omnitrix load screen for 3 seconds
+        document.getElementById('transform').src="stuffs/img/trix0.gif";
+        document.getElementById('transform').width="270";
+        await sleep('2200');
+        window.human=false;
+        
+        
+
+        //window.alert("Done waiting?. Let's Go!")
+
+        //below part turns ben into aliens
+        if(id==0){
+            document.getElementById('transform').src="stuffs/img/aliens/fourarms.png";
+            document.getElementById('transform').width="270";
+            document.getElementById('info').innerHTML='Name: Four Arms<br>Species: Tetramand<br>Home Planet: Khoros';
+            document.getElementById('hero').innerHTML='Four Arms';
+            window.id=1;
+            speak("four arms")         
+        } 
+        else if(id==1){
+            document.getElementById('transform').src="stuffs/img/aliens/Cannonbolt.png";
+            document.getElementById('transform').width="450";
+            document.getElementById('info').innerHTML='Name: Cannonbolt<br>Species: Arburian Pelarota<br>Body: Pillbug';
+            document.getElementById('hero').innerHTML='Cannonbolt';
+            window.id=2;
+            speak("Cannon bolt")
+            
+        }
+        else if(id==2){
+            document.getElementById('transform').src="stuffs/img/aliens/diamondhead.png";
+            document.getElementById('transform').width="300";
+            document.getElementById('info').innerHTML='Name: Diamondhead<br>Species: Petrosapien<br>Home Planet: Petropia';
+            document.getElementById('hero').innerHTML='Diamond Head';
+            window.id=3;
+            speak("Diamond Head")
+        }
+        else if(id==3){
+            document.getElementById('transform').src="stuffs/img/aliens/XLR8.png";
+            document.getElementById('transform').width="400";
+            document.getElementById('info').innerHTML='Name: XLR8<br>Species: Kineceleran<br>Home Planet: Kinet';
+            document.getElementById('hero').innerHTML='XLR8';
+            window.id=4;
+            speak("X L R 8")
+        }
+        else if(id==4){
+            document.getElementById('transform').src="stuffs/img/aliens/Ghostfreak.png";
+            document.getElementById('transform').width="300";
+            document.getElementById('info').innerHTML='Name: Ghostfreak<br>Species: Ectonurite<br>DNA Source: ZsSkayr<br>Home Planet: Anur Phaetos';
+            document.getElementById('hero').innerHTML='Ghost Freak';
+            window.id=5;
+            speak("ghost freak")
+        }
+        else if(id==5){
+            document.getElementById('transform').src="stuffs/img/aliens/GreyMatter.png";
+            document.getElementById('transform').width="200";
+            document.getElementById('info').innerHTML='Name: Grey Matter<br>Species: Galvan<br>Home Planet: Galvan Prime';
+            document.getElementById('hero').innerHTML='Grey Matter';
+            window.id=6;
+            speak("grey matter")
+        }
+        else if(id==6){
+            document.getElementById('transform').src="stuffs/img/aliens/Heatblast.png";
+            document.getElementById('transform').width="200";
+            document.getElementById('info').innerHTML='Name: Heatblast<br>Species: Pyronite<br>Home Planet: Pyros';
+            document.getElementById('hero').innerHTML='Heat Blast';
+            window.id=7;
+            speak("heat blast")
+        }
+        else if(id==7){
+            document.getElementById('transform').src="stuffs/img/aliens/Stinkfly.png";
+            document.getElementById('transform').width="320";
+            document.getElementById('info').innerHTML='Name: Stinkfly<br>Species: Lepidopterran<br>Body: Winged Insectoid';
+            document.getElementById('hero').innerHTML='Stinfly';
+            window.id=8;
+            speak("stinfly")
+        }
+        else if(id==8){
+            document.getElementById('transform').src="stuffs/img/aliens/Upchuck.png";
+            document.getElementById('transform').width="320";
+            document.getElementById('info').innerHTML='Name: Upchuck<br>Species: Gourmand<br>Home Planet: Peptos-XI(destroyed) & Peptos-XII';
+            document.getElementById('hero').innerHTML='Upchuck';
+            window.id=9;
+            speak("upchuck")
+        }
+        else if(id==9){
+            document.getElementById('transform').src="stuffs/img/aliens/Upgrade.png";
+            document.getElementById('transform').width="300";
+            document.getElementById('info').innerHTML='Name: Upgrade<br>Species: Galvanic Mechamorph<br>Home Planet: Galvan B';
+            document.getElementById('hero').innerHTML='Upgrade';
+            window.id=10;
+            speak("upgrade")
+        }
+        else if(id==10){
+            document.getElementById('transform').src="stuffs/img/aliens/wildmutt.png";
+            document.getElementById('transform').width="450";
+            document.getElementById('info').innerHTML='Name: Wildmutt<br>Species: Vulpimancer<br>Home Planet: Vulpin<br>Body: Animalistic';
+            document.getElementById('hero').innerHTML='Wildmutt';
+            window.id=1;
+            speak("wild mutt")
+        }
+
+        
+    }
+
+    //function to bring ben back after transformation
+    async function bhum(){
+
+        if(window.human==true){
+            console.log('Omnitrix: He is human already!')
+        } else{
+
+        //toggle to full screen when omnitrix clicked
+        requestFullScreen()
+
+        //scroll to top after full screen
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+
+        //omnitrix load screen for 3 seconds
+        document.getElementById('transform').src="stuffs/img/trix0.gif";
+        document.getElementById('transform').width="270";
+        await sleep('2200');
+
+        window.human=true;
+        document.getElementById('transform').src="stuffs/img/aliens/Ben.png";
+        document.getElementById('transform').width="170";
+        document.getElementById('info').innerHTML='Name: Benjamin Tennsyon<br>Species: Homosapian(Human)<br>Home Planet: Earth';
+        document.getElementById('hero').innerHTML='Its Hero Time!';
+        speak("ben tennyson")
+    
+    }
+}
+
+    //funtion to toggle into full screen whenever needed
+    function requestFullScreen() {
+
+        var el = document.documentElement;
+
+        
+        var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen 
+        || el.mozRequestFullScreen || el.msRequestFullScreen;
+
+        if (requestMethod) {
+
+         requestMethod.call(el);
+
+        } else if (typeof window.ActiveXObject !== "undefined") {
+
+         var wscript = new ActiveXObject("WScript.Shell");
+
+        if (wscript !== null) {
+         wscript.SendKeys("{F11}");
+         }
+        }
+}
+
+//funtion to scroll to botton
+function scrollToBottom(){
+    window.scrollTo(0,document.body.scrollHeight);
+}
+//funtion to sleep
+function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+   }
+//funtion to control background theme with a buttion
+function control(){
+    if(window.play==true){
+        document.getElementById('control').src="stuffs/img/play.png";
+        document.getElementById('theme').pause();
+        window.play=false;
+    } else if (window.play==false){
+        document.getElementById('control').src="stuffs/img/pause.png";
+        document.getElementById('theme').play();
+        window.play=true;
+    }
+
+}
+
+//speech synthesis funtion
+function speak(msg) {
+                
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                //textToAudio attributes
+                speech.text = msg;
+                speech.volume = 120;
+                speech.rate = 1;
+                speech.pitch = 1;
+                
+                window.speechSynthesis.speak(speech);
+            }
+
+function showepisodes(){
+    if(window.epidis==false){
+        document.getElementById('episodes').data='https://senthamiltrends.blogspot.com/';
+        document.getElementById('episodes').height="80%";
+        document.getElementById('episodes').width="80%";
+        document.getElementById('episodes').style="margin-left: 9%;  border: 15px solid rgb(72, 171, 66); border-radius: 50px;";
+        window.epidis=true;
+    } else{
+        document.getElementById('episodes').data='';
+        document.getElementById('episodes').height="0%";
+        document.getElementById('episodes').width="0%";
+        document.getElementById('episodes').style="margin-left: 0%;  border: 0px solid rgb(72, 171, 66); border-radius: 0px;";
+        window.epidis=false;
+    }
+    
+}
+
+</script>
+
+    </head>
+    <body>
+
+        <video id="background-video" autoplay loop muted poster="stuffs/img/poster.jpg">
+            <source src="stuffs/vid/bg.mp4" type="video/mp4"></video>
+        <audio autoplay loop id="theme">
+            <source src="stuffs/music/theme.mp3">
+        </audio>
+
+            <img width="5%" src="stuffs/img/title.png" style="float: left; margin-left:2%; margin-top: 2%; ">
+            <br><h1 id="hero" style="text-align: center; color: white; margin-right: 7%; font-family: 'Mochiy Pop P One', sans-serif;">It's Hero Time!</h1><br>
+
+            
+            <center><img id='transform' width="170" src="stuffs/img/aliens/Ben.png" onclick="bhum()">
+                
+
+            <br><br>
+            <img src="stuffs/img/darrow.gif" onclick="scrollToBottom()" class="green" style="float: left; width: 4%; margin-left: 17%;">
+            <img id='oface' class="green rotate" src="stuffs/img/omiface.png" onclick="transform()">
+            <img src="stuffs/img/darrow.gif" onclick="scrollToBottom()" class="green" style="float: right; width: 4%; margin-right: 17%;">
+        
+
+        <br><br><br><br><p style="border: 10px solid rgb(72, 171, 66); border-radius: 40px; text-align: center; font-family: 'Dongle', sans-serif; color: white; font-size: 270%;">Hit on omnitrix to tranform Ben!<br>Tap on alien to bring Ben back!</p>
+
+        <h1 style="text-align: center; color: rgb(72, 171, 66); font-family: 'Mochiy Pop P One', sans-serif;">Alien Details</h1>
+
+        <p id="info" style="text-align: center; font-family: 'Dongle', sans-serif; color: white; font-size: 200%;">Name: Benjamin Tennyson<br>Species: Homosapian(Human)<br>Home Planet: Earth</p>
+        <img width="3%" alt="print screen" class="green" onclick="window.print()" src="stuffs/img/omiface.png"></center><br>
+        <img width="5%" style="float: right; margin-bottom: 1%; margin-right: 3%;" class="green" onclick="showepisodes()" src="stuffs/img/epi.png"><br>
+
+        <div style="position:fixed;bottom:1%;left:1%; color: white; "><img width="28%" id="control" onclick="control()" src="stuffs/img/play.png"></div>
+
+
+        
+<center><object id="episodes" style="margin-left: 0%;  border: 0px solid rgb(72, 171, 66); border-radius: 0px;" height="0%" width="0%"></object></center><br><br>
+
+
+    </body>
+</html>

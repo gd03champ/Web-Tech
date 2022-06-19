@@ -1,0 +1,43 @@
+#Folder details
+
+1)Folder named 'code' has the main code files in it
+
+2)Folder named 'screenrec' has the screen recording video of the webpage
+
+3)Folder named 'screenshots' has the screenshot of both the code and webpage
+
+4)Folder named 'wordfile' has the code as word document as requested
+
+
+
+
+#Instructions on using the webpage It's Hero Time!
+
+
+1) Click on rotating Omnitrix to tranform ben into random aleins
+
+2) Repeat (1) to discover different aliens
+
+3) Click on the alein the bring ben back
+
+4) The details of alien ben transformed into is will be diplayed below
+
+5) Or click on the down arrow beside omnitrix to move to alien details
+
+6) Click the pause button in the bottom left corner to pause the theme music
+
+7) Click on it again to resume theme music
+
+9) Click on the small omnitrix symbol at the bottom most too print page with alein details
+
+10) Click on play icon at bottom right to display all ben10 episodes season wise9
+
+11) Click on it again to close the tray
+
+
+NOTE: I've hosted this site in [https://itsherotime.herokuapp.com]
+
+
+It's Hero Time!
+
+ 
